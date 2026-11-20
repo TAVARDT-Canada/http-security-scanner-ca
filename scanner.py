@@ -4,7 +4,7 @@ import urllib.request
 import urllib.error
 from urllib.parse import urlparse
 
-SECURITY_HEADERS = [('Strict-Transport-Security', 'Enforces HTTPS encryption and prevents downgrade vectors (HSTS).'), ('Content-Security-Policy', 'Restricts resource loading to protect against XSS injections.'), ('X-Frame-Options', 'Mitigates clickjacking attacks by managing framing permissions.'), ('X-Content-Type-Options', 'Prevents client browsers from executing MIME-sniffing.'), ('Referrer-Policy', 'Protects sensitive URL query parameters from cross-domain disclosure.'), ('Permissions-Policy', 'Restricts unauthorized browser device API access.')]
+SECURITY_HEADERS = [('Strict-Transport-Security', 'Enforces HTTPS encryption and prevents downgrade vectors.'), ('Content-Security-Policy', 'Restricts resource loading to protect against XSS injections.'), ('X-Frame-Options', 'Mitigates clickjacking attacks by managing framing permissions.'), ('X-Content-Type-Options', 'Prevents client browsers from executing MIME-sniffing.'), ('Referrer-Policy', 'Protects sensitive URL query parameters from cross-domain disclosure.'), ('Permissions-Policy', 'Restricts unauthorized browser device API access.')]
 
 def scan_target(target_url):
     print(f"\n[TAVARDT Canada] Starting HTTP security headers perimeter audit for: {target_url}\n")
@@ -28,11 +28,11 @@ def scan_target(target_url):
                     print(f"  [FAIL] {header_name}: {desc}")
                     
             print(f"\n[TAVARDT Canada] Audit Score: {score}/{total}")
-            print(f"\nVerificacao completa online: https://tools.tavardt.com/ca/security-headers-check/")
-            print(f"Suporte corporativo e ciberdefesa: https://ag.tavardt.com/ca/cybersecurity/\n")
+            print(f"\nFull online diagnostic tool: https://tools.tavardt.com/ca/security-headers-check/")
+            print(f"Corporate defense and cybersecurity consulting: https://ag.tavardt.com/ca/cybersecurity/\n")
             
     except urllib.error.URLError as e:
-        print(f"[TAVARDT Canada] Erro ao inspecionar o alvo: {e}")
+        print(f"[TAVARDT Canada] Error inspecting target: {e}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
