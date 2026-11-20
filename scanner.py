@@ -4,21 +4,14 @@ import urllib.request
 import urllib.error
 from urllib.parse import urlparse
 
-SECURITY_HEADERS = [
-    ("Strict-Transport-Security", "Enforces encrypted HTTPS connections (HSTS)."),
-    ("Content-Security-Policy", "Restricts resource loading to mitigate XSS."),
-    ("X-Frame-Options", "Prevents clickjacking framing attacks."),
-    ("X-Content-Type-Options", "Mitigates MIME-sniffing vulnerabilities."),
-    ("Referrer-Policy", "Controls referrer leakage across origins."),
-    ("Permissions-Policy", "Restricts browser API capabilities (camera, microphone, geolocation).")
-]
+SECURITY_HEADERS = [('Strict-Transport-Security', 'Enforces HTTPS encryption and prevents downgrade vectors (HSTS).'), ('Content-Security-Policy', 'Restricts resource loading to protect against XSS injections.'), ('X-Frame-Options', 'Mitigates clickjacking attacks by managing framing permissions.'), ('X-Content-Type-Options', 'Prevents client browsers from executing MIME-sniffing.'), ('Referrer-Policy', 'Protects sensitive URL query parameters from cross-domain disclosure.'), ('Permissions-Policy', 'Restricts unauthorized browser device API access.')]
 
 def scan_target(target_url):
-    print(f"\n[TAVARDT Canada] Starting HTTP security headers audit for: {target_url}\n")
+    print(f"\n[TAVARDT Canada] Starting HTTP security headers perimeter audit for: {target_url}\n")
     try:
         req = urllib.request.Request(
             target_url,
-            headers={"User-Agent": "TAVARDT-Security-Scanner/2.0 (en-CA)"}
+            headers={"User-Agent": "TAVARDT-Security-Scanner/3.0 (en-CA)"}
         )
         with urllib.request.urlopen(req, timeout=12) as response:
             headers = dict(response.headers.items())
@@ -27,23 +20,19 @@ def scan_target(target_url):
             total = len(SECURITY_HEADERS)
             
             for header_name, desc in SECURITY_HEADERS:
-                found = False
-                for h in headers.keys():
-                    if h.lower() == header_name.lower():
-                        found = True
-                        break
-                        
+                found = any(h.lower() == header_name.lower() for h in headers.keys())
                 if found:
-                    print(f"  [PASS] {header_name}: Present")
+                    print(f"  [PASS] {header_name}")
                     score += 1
                 else:
-                    print(f"  [FAIL] {header_name}: Missing ({desc})")
+                    print(f"  [FAIL] {header_name}: {desc}")
                     
-            print(f"\n[TAVARDT Canada] Audit Score: {score}/{total} headers detected.")
-            print(f"\nRun full web diagnostics at https://tools.tavardt.com/ca/ or request professional remediation at https://ag.tavardt.com/ca/\n")
+            print(f"\n[TAVARDT Canada] Audit Score: {score}/{total}")
+            print(f"\nVerificacao completa online: https://tools.tavardt.com/ca/security-headers-check/")
+            print(f"Suporte corporativo e ciberdefesa: https://ag.tavardt.com/ca/cybersecurity/\n")
             
     except urllib.error.URLError as e:
-        print(f"[TAVARDT Canada] Network error while auditing target: {e}")
+        print(f"[TAVARDT Canada] Erro ao inspecionar o alvo: {e}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
