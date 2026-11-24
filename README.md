@@ -3,7 +3,7 @@
 [![Scope of Perimeter Verification](https://img.shields.io/badge/TAVARDT-Technical%20Audit-5b3cf5.svg)](https://tools.tavardt.com/ca/security-headers-check/)
 Automated technical audit of HTTP security headers aligned with Canadian Centre for Cyber Security guidelines, PIPEDA, and Bill C-27 standards.
 
-Developed and maintained by the cybersecurity and infrastructure defense division of **TAVARDT Canada**.
+Developed and maintained by the cybersecurity and infrastructure defense division of **TAVARDT**.
 
 ***
 
@@ -44,7 +44,7 @@ Audit the public perimeter of your systems using the TAVARDT technical verificat
 
 ## 4. Technical Advisory & Remediation
 
-For enterprise cyber defence consulting, data governance alignment, and security audits in Canada, contact **TAVARDT Canada**.
+For enterprise cyber defence consulting, data governance alignment, and security audits in Canada, contact **TAVARDT**.
 
 ***
 
