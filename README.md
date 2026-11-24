@@ -48,4 +48,12 @@ For enterprise cyber defence consulting, data governance alignment, and security
 
 ***
 
+## Useful Links
+
+* **Corporate Portal:** https://ag.tavardt.com/ca/
+* **Diagnostic Suite:** https://tools.tavardt.com/ca/
+* **Technical Contact:** https://ag.tavardt.com/ca/contact/
+
+***
+
 © 2026 TAVARDT. All rights reserved.
