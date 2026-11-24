@@ -1,4 +1,4 @@
-# HTTP Security Headers Scanner | TAVARDT Canada
+# HTTP Security Headers Scanner
 
 [![Scope of Perimeter Verification](https://img.shields.io/badge/TAVARDT-Technical%20Audit-5b3cf5.svg)](https://tools.tavardt.com/ca/security-headers-check/)
 Automated technical audit of HTTP security headers aligned with Canadian Centre for Cyber Security guidelines, PIPEDA, and Bill C-27 standards.
@@ -45,3 +45,7 @@ Audit the public perimeter of your systems using the TAVARDT technical verificat
 ## 4. Technical Advisory & Remediation
 
 For enterprise cyber defence consulting, data governance alignment, and security audits in Canada, contact **TAVARDT Canada**.
+
+***
+
+© 2026 TAVARDT. All rights reserved.
